@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meshy.ai · 法语区 KOL 增长作品集 | Yuning Wang</title>
+<style>
+  :root{
+    --bg:#0a0a0f;
+    --bg-2:#11121a;
+    --card:#161824;
+    --line:rgba(255,255,255,.08);
+    --txt:#e9ecf1;
+    --mut:#9aa3b2;
+    --acc:#7c5cff;       /* purple */
+    --acc2:#22d3ee;      /* cyan  */
+    --acc3:#f472b6;      /* pink  */
+    --good:#34d399;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* ============ Animated background ============ */
+  .bg-grad{
+    position:fixed;inset:0;z-index:-2;
+    background:
+      radial-gradient(800px 600px at 10% 0%, rgba(124,92,255,.25), transparent 60%),
+      radial-gradient(700px 500px at 90% 10%, rgba(34,211,238,.18), transparent 60%),
+      radial-gradient(900px 700px at 50% 100%, rgba(244,114,182,.18), transparent 60%),
+      var(--bg);
+  }
+  .bg-grid{
+    position:fixed;inset:0;z-index:-1;opacity:.35;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    background-size:44px 44px;
+    mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  }
+  .bg-orbs{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+  .orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;animation:float 18s ease-in-out infinite}
+  .orb.a{width:380px;height:380px;background:#7c5cff;top:-80px;left:-80px}
+  .orb.b{width:320px;height:320px;background:#22d3ee;top:30%;right:-100px;animation-delay:-6s}
+  .orb.c{width:300px;height:300px;background:#f472b6;bottom:-100px;left:30%;animation-delay:-12s}
+  @keyframes float{
+    0%,100%{transform:translate(0,0) scale(1)}
+    50%{transform:translate(30px,-40px) scale(1.08)}
+  }
+
+  /* ============ Layout ============ */
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 22px 80px}
+  nav.top{
+    position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+    background:rgba(10,10,15,.55);border-bottom:1px solid var(--line);
+    margin:-28px -22px 36px;padding:14px 22px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+  .brand .logo{
+    width:30px;height:30px;border-radius:8px;
+    background:conic-gradient(from 220deg,#7c5cff,#22d3ee,#f472b6,#7c5cff);
+    box-shadow:0 0 20px rgba(124,92,255,.55);
+  }
+  nav.top .links{display:flex;gap:18px;font-size:14px;color:var(--mut)}
+  nav.top .links a:hover{color:#fff}
+
+  /* ============ Hero ============ */
+  .hero{padding:48px 0 24px;position:relative}
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+    background:rgba(255,255,255,.03);font-size:12px;color:var(--mut);
+  }
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 10px var(--good);animation:pulse 1.6s infinite}
+  @keyframes pulse{50%{opacity:.4}}
+  h1{
+    font-size:clamp(34px,5.4vw,62px);line-height:1.08;margin:18px 0 10px;letter-spacing:-.02em;font-weight:800;
+  }
+  h1 .grad{
+    background:linear-gradient(90deg,#a78bfa,#22d3ee 50%,#f472b6);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    background-size:200% 100%;animation:shine 6s linear infinite;
+  }
+  @keyframes shine{to{background-position:200% 0}}
+  .sub{color:var(--mut);max-width:760px;font-size:17px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .chip{padding:6px 12px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.03);font-size:13px;color:#cfd5e0}
+  .chip b{color:#fff}
+
+  /* ============ KPI ============ */
+  .kpis{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px;
+  }
+  .kpi{
+    position:relative;padding:22px;border-radius:16px;
+    background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+    border:1px solid var(--line);overflow:hidden;
+  }
+  .kpi::before{
+    content:"";position:absolute;inset:0;border-radius:16px;padding:1px;
+    background:linear-gradient(135deg,rgba(124,92,255,.6),rgba(34,211,238,.4),transparent 70%);
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.7;
+  }
+  .kpi .num{font-size:34px;font-weight:800;letter-spacing:-.02em}
+  .kpi .num small{font-size:16px;color:var(--mut);font-weight:600;margin-left:2px}
+  .kpi .lab{color:var(--mut);font-size:13px;margin-top:4px}
+  @media(max-width:780px){.kpis{grid-template-columns:repeat(2,1fr)}}
+
+  /* ============ Section ============ */
+  section{margin-top:72px;scroll-margin-top:80px}
+  .sec-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:22px}
+  .sec-head h2{font-size:28px;letter-spacing:-.01em;margin:0}
+  .sec-head .tag{font-size:12px;color:var(--mut);letter-spacing:.2em;text-transform:uppercase}
+  .lead{color:var(--mut);max-width:780px;margin-top:-6px;margin-bottom:24px}
+
+  /* ============ Workflow ============ */
+  .flow{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:14px;
+  }
+  .step{
+    position:relative;padding:18px;border-radius:14px;
+    background:var(--card);border:1px solid var(--line);
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .step:hover{transform:translateY(-4px);border-color:rgba(124,92,255,.55);box-shadow:0 14px 40px -20px rgba(124,92,255,.6)}
+  .step .n{
+    width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-weight:800;
+    background:linear-gradient(135deg,#7c5cff,#22d3ee);color:#0a0a0f;font-size:14px;
+  }
+  .step h4{margin:12px 0 6px;font-size:15px}
+  .step p{margin:0;color:var(--mut);font-size:13px}
+  .step .tools{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+  .step .tools span{font-size:11px;padding:3px 7px;border-radius:6px;background:rgba(124,92,255,.14);color:#c8bfff;border:1px solid rgba(124,92,255,.25)}
+  @media(max-width:980px){.flow{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.flow{grid-template-columns:1fr}}
+
+  /* ============ Pipeline diagram ============ */
+  .pipe{
+    margin-top:28px;padding:22px;border-radius:16px;border:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(34,211,238,.06),rgba(124,92,255,.04));
+    overflow-x:auto;
+  }
+  .pipe-row{display:flex;align-items:center;gap:10px;min-width:780px}
+  .node{
+    flex:1;min-width:130px;padding:12px 14px;border-radius:12px;background:#0e1018;border:1px solid var(--line);
+    text-align:center;font-size:13px;
+  }
+  .node b{display:block;font-size:14px;margin-bottom:2px}
+  .node small{color:var(--mut);font-size:11px}
+  .arrow{font-size:18px;color:var(--acc2);opacity:.7}
+  .node.ai{border-color:rgba(124,92,255,.45);background:linear-gradient(180deg,rgba(124,92,255,.18),rgba(124,92,255,.04))}
+  .node.ai b::after{content:" ✦";color:var(--acc)}
+
+  /* ============ Videos ============ */
+  .grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  }
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .card{
+    position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--card);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 24px 60px -30px rgba(34,211,238,.55)}
+  .thumb{
+    aspect-ratio:9/16;position:relative;overflow:hidden;
+    background:#000;
+    display:grid;place-items:center;
+  }
+  .thumb .ph{
+    position:absolute;inset:0;
+    background:linear-gradient(135deg,var(--c1,#7c5cff),var(--c2,#22d3ee));
+    opacity:.85;
+  }
+  .thumb .ph::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(600px 400px at 30% 20%,rgba(255,255,255,.25),transparent 60%),
+               radial-gradient(400px 300px at 80% 90%,rgba(0,0,0,.45),transparent 60%);
+  }
+  .thumb .platform{
+    position:absolute;top:10px;left:10px;z-index:2;
+    padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:.05em;
+    background:rgba(0,0,0,.55);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.15);
+  }
+  .thumb .views{
+    position:absolute;top:10px;right:10px;z-index:2;
+    padding:4px 8px;border-radius:6px;font-size:12px;font-weight:800;
+    background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.15);
+  }
+  .thumb .play{
+    position:relative;z-index:2;width:64px;height:64px;border-radius:50%;
+    background:rgba(255,255,255,.92);display:grid;place-items:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform .3s ease;
+  }
+  .card:hover .play{transform:scale(1.1)}
+  .play svg{width:24px;height:24px;fill:#0a0a0f;margin-left:3px}
+  .meta-b{padding:14px 16px}
+  .meta-b .name{font-weight:700;font-size:15px}
+  .meta-b .desc{color:var(--mut);font-size:12.5px;margin-top:4px}
+  .meta-b .row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:12px;color:var(--mut)}
+  .meta-b .row b{color:#fff}
+  .ext{font-size:11px;color:var(--acc2)}
+
+  /* ============ AI tips ============ */
+  .tips{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:820px){.tips{grid-template-columns:1fr}}
+  .tip{
+    position:relative;padding:22px;border-radius:16px;border:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+    overflow:hidden;
+  }
+  .tip .icon{
+    width:42px;height:42px;border-radius:10px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--c1,#7c5cff),var(--c2,#22d3ee));
+    font-size:20px;font-weight:900;color:#0a0a0f;
+  }
+  .tip h3{margin:14px 0 6px;font-size:18px}
+  .tip p{color:#cfd5e0;font-size:14px;margin:0 0 10px}
+  .tip ul{margin:8px 0 0;padding-left:18px;color:var(--mut);font-size:13.5px}
+  .tip ul li{margin:4px 0}
+  .tip .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .tip .stack span{
+    font-size:11px;padding:4px 8px;border-radius:6px;
+    background:rgba(34,211,238,.12);color:#a5f3fc;border:1px solid rgba(34,211,238,.25);
+  }
+
+  /* ============ Mock screen (Grok) ============ */
+  .mock{
+    margin-top:18px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0c0e16;
+  }
+  .mock .bar{display:flex;align-items:center;gap:6px;padding:10px 12px;background:#11131c;border-bottom:1px solid var(--line)}
+  .mock .bar i{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .mock .bar i.r{background:#ff5f57}.mock .bar i.y{background:#febc2e}.mock .bar i.g{background:#28c840}
+  .mock .bar span{margin-left:10px;color:var(--mut);font-size:12px}
+  .mock .body{padding:14px;font-family:"JetBrains Mono","SF Mono",Consolas,monospace;font-size:12.5px;color:#cfd5e0}
+  .mock .prompt{color:#a5f3fc}
+  .mock .ai{color:#c8bfff}
+  .mock table{width:100%;border-collapse:collapse;margin-top:10px;font-size:12px}
+  .mock th,.mock td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:left}
+  .mock th{color:var(--mut);font-weight:600;background:rgba(255,255,255,.02)}
+  .mock .badge{font-size:10px;padding:2px 6px;border-radius:4px;background:rgba(52,211,153,.15);color:#6ee7b7;border:1px solid rgba(52,211,153,.3)}
+  .mock .badge.warn{background:rgba(251,191,36,.15);color:#fcd34d;border-color:rgba(251,191,36,.3)}
+
+  /* ============ Footer ============ */
+  footer{
+    margin-top:80px;padding-top:24px;border-top:1px solid var(--line);
+    color:var(--mut);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  }
+
+  /* ============ Reveal ============ */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div class="bg-grad"></div>
+<div class="bg-grid"></div>
+<div class="bg-orbs"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
+
+<div class="wrap">
+
+  <nav class="top">
+    <div class="brand"><div class="logo"></div> Yuning · Meshy.ai Portfolio</div>
+    <div class="links">
+      <a href="#workflow">Workflow</a>
+      <a href="#viral">Viral Videos</a>
+      <a href="#ai">AI Stack</a>
+      <a href="#impact">Impact</a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero reveal">
+    <div class="pill"><span class="dot"></span> Case Study · Meshy.ai · 2024 – 2025</div>
+    <h1>用 <span class="grad">AI 自动化工作流</span><br/>跑出法语区 <span class="grad">8M+ 月播放</span> 的 KOL 增长</h1>
+    <p class="sub">
+      在 3D 生成赛道（游戏开发 / 3D 打印 / 泛科技）负责法语区 KOL 全流程：
+      用爬虫 + LLM 重构筛选漏斗，把建联效率、爆款率、长期留存全部前置到工具层，
+      让一个人 run 出一个团队的产出。
+    </p>
+    <div class="meta">
+      <div class="chip">📍 <b>法语区</b> · FR / BE / CH / CA-QC</div>
+      <div class="chip">🎯 <b>4 平台</b> · TikTok · Instagram · YouTube · Facebook</div>
+      <div class="chip">🧩 垂类 · <b>Game-Dev / 3D-Print / Tech</b></div>
+      <div class="chip">⚙️ Stack · <b>Grok · Apify · Mailmeteor · Streak · GPT</b></div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="num" data-c="8">0<small>M+</small></div><div class="lab">月均总播放</div></div>
+      <div class="kpi"><div class="num" data-c="300">0<small>+</small></div><div class="lab">月均有效建联</div></div>
+      <div class="kpi"><div class="num" data-c="30">0<small>+</small></div><div class="lab">长期合作 KOL（3-6 月）</div></div>
+      <div class="kpi"><div class="num" data-c="9">0<small></small></div><div class="lab">CPM &lt; 9 · 高转化筛选线</div></div>
+    </div>
+  </header>
+
+  <!-- ============ WORKFLOW ============ -->
+  <section id="workflow" class="reveal">
+    <div class="sec-head">
+      <div>
+        <div class="tag">01 · WORKFLOW</div>
+        <h2>AI-Powered KOL Growth Workflow</h2>
+      </div>
+    </div>
+    <p class="lead">把传统 BD「人肉刷号 + Excel 表格」的工作流，重构成 5 步可复用的自动化管线。每一步都嵌入了 AI 工具来放大杠杆。</p>
+
+    <div class="flow">
+      <div class="step">
+        <div class="n">1</div>
+        <h4>Discover · 达人发现</h4>
+        <p>建立 2 个垂直账号 (TikTok / IG) 作为「钓鱼号」吸引算法推流；同步用爬虫抓取 hashtag、声音、相似账号。</p>
+        <div class="tools"><span>Grok</span><span>Apify</span><span>TT/IG Native</span></div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h4>Score · 智能筛选</h4>
+        <p>LLM 读取主页简介 + 近 10 条视频，输出垂直度评分、avg views、CPM 预测，一键过滤掉 80% 噪声。</p>
+        <div class="tools"><span>GPT-4</span><span>Grok</span><span>Sheets API</span></div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h4>Outreach · 邮件群发</h4>
+        <p>3 版本地化话术 (FR/EN) + Mailmeteor 合并字段群发 Gmail，Streak 自动打标签 / 追踪打开 / 漏斗看板。</p>
+        <div class="tools"><span>Mailmeteor</span><span>Streak</span><span>Gmail</span></div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <h4>Auto-Reply · 自动回复</h4>
+        <p>报价前的 FAQ / 寄样地址 / 产品资料用 Gmail Filter + 模板自动响应，把人留给真正的谈判环节。</p>
+        <div class="tools"><span>Gmail Filters</span><span>Templates</span><span>Zapier</span></div>
+      </div>
+      <div class="step">
+        <div class="n">5</div>
+        <h4>Retain · 长期维护</h4>
+        <p>Streak Pipeline 定期 follow-up，每次产品更新触发批量 update 邮件，30+ KOL 实现 3-6 月长期复投。</p>
+        <div class="tools"><span>Streak</span><span>Notion</span><span>Cron</span></div>
+      </div>
+    </div>
+
+    <!-- pipeline diagram -->
+    <div class="pipe">
+      <div class="pipe-row">
+        <div class="node ai"><b>Grok / Apify</b><small>scrape 1000+ creators</small></div>
+        <div class="arrow">→</div>
+        <div class="node ai"><b>GPT Scoring</b><small>vertical fit + CPM</small></div>
+        <div class="arrow">→</div>
+        <div class="node"><b>Sheets DB</b><small>tagged shortlist</small></div>
+        <div class="arrow">→</div>
+        <div class="node ai"><b>Mailmeteor</b><small>localized mass send</small></div>
+        <div class="arrow">→</div>
+        <div class="node"><b>Streak CRM</b><small>track · auto-reply</small></div>
+        <div class="arrow">→</div>
+        <div class="node"><b>Posted</b><small>8M+ views / mo</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIRAL VIDEOS ============ -->
+  <section id="viral" class="reveal">
+    <div class="sec-head">
+      <div>
+        <div class="tag">02 · RESULTS</div>
+        <h2>Viral Campaign Highlights</h2>
+      </div>
+      <div style="color:var(--mut);font-size:13px">点击卡片 → 跳转原视频</div>
+    </div>
+    <p class="lead">8 条代表性合作视频，覆盖 TT / IG / YT 三大平台，单条最高 <b style="color:#fff">298K</b> 播放，整体爆款率 ≈ 30%。</p>
+
+    <div class="grid" id="videoGrid"></div>
+  </section>
+
+  <!-- ============ AI STACK / TIPS ============ -->
+  <section id="ai" class="reveal">
+    <div class="sec-head">
+      <div>
+        <div class="tag">03 · AI STACK</div>
+        <h2>How I Use AI to 10× the Workflow</h2>
+      </div>
+    </div>
+    <p class="lead">每一个工具都在替我做「重复 + 判断」的活儿。下面是真实在用的 4 个核心模块。</p>
+
+    <div class="tips">
+
+      <!-- Grok -->
+      <div class="tip" style="--c1:#7c5cff;--c2:#22d3ee">
+        <div class="icon">G</div>
+        <h3>Grok · 爬虫 + 智能筛选达人</h3>
+        <p>用 Grok / Apify Actor 抓取 TikTok / IG 上指定 hashtag (#3dprint #unrealengine #blender) 的近 30 天高赞视频，自动提取作者主页、粉丝数、平均播放、互动率。</p>
+        <ul>
+          <li>Prompt 让 Grok 给出 <b>vertical fit 0-10</b> 评分 + 一句话推荐理由</li>
+          <li>自动过滤掉 follower &lt; 10k 或 avg view &lt; 5k 的噪声账号</li>
+          <li>CSV 直接落到 Google Sheets，第二天就能 outreach</li>
+        </ul>
+
+        <div class="mock">
+          <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>grok.x.ai · KOL Sourcing Agent</span></div>
+          <div class="body">
+            <div class="prompt">▸ scrape tiktok hashtag #impression3d, last 30d, min 20k views<br/>&nbsp;&nbsp;score by relevance to "AI 3D model generation" tool</div>
+            <table>
+              <thead><tr><th>Handle</th><th>Followers</th><th>Avg Views</th><th>Fit</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>@lebretzel_</td><td>112K</td><td>48K</td><td>9.2</td><td><span class="badge">SHORTLIST</span></td></tr>
+                <tr><td>@kyoshitech</td><td>76K</td><td>31K</td><td>8.8</td><td><span class="badge">SHORTLIST</span></td></tr>
+                <tr><td>@xenoks</td><td>240K</td><td>92K</td><td>9.5</td><td><span class="badge">PRIORITY</span></td></tr>
+                <tr><td>@unefille.ia</td><td>34K</td><td>22K</td><td>8.4</td><td><span class="badge">SHORTLIST</span></td></tr>
+                <tr><td>@some_random_diy</td><td>9K</td><td>800</td><td>3.1</td><td><span class="badge warn">SKIP</span></td></tr>
+              </tbody>
+            </table>
+            <div class="ai" style="margin-top:10px">✦ Grok: 4 / 50 creators passed the filter. Estimated combined reach if all post: 1.2M – 1.8M views.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mailmeteor -->
+      <div class="tip" style="--c1:#f472b6;--c2:#7c5cff">
+        <div class="icon">M</div>
+        <h3>Mailmeteor · 本地化群发 Gmail</h3>
+        <p>从 Sheets 一键 merge fields，3 版法语话术 A/B 测试 (Gaming / 3D Print / Tech)，每天稳定发出 80-120 封个性化邮件，开信率维持在 <b>42%+</b>。</p>
+        <ul>
+          <li>变量字段：<code>{first_name} · {platform} · {best_video} · {fit_reason}</code></li>
+          <li>每个 KOL 的「best_video」由 GPT 提前选好，邮件里直接夸到点子上</li>
+          <li>自动延时发送 + 失败重试，避开 Gmail 反垃圾阈值</li>
+        </ul>
+        <div class="mock">
+          <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>mailmeteor.com · campaign #fr_q3_gamedev</span></div>
+          <div class="body">
+            Sent: <b style="color:#fff">312</b> &nbsp;·&nbsp;
+            Opened: <b style="color:#6ee7b7">134 (43%)</b> &nbsp;·&nbsp;
+            Replied: <b style="color:#a5f3fc">38 (12%)</b> &nbsp;·&nbsp;
+            Booked: <b style="color:#c8bfff">19</b>
+            <br/><br/>
+            <span class="prompt">Subject:</span> Salut {first_name} 👋 ton reel sur {best_video} m'a bluffé<br/>
+            <span class="prompt">Body:</span> On vient de sortir Meshy 5 — image-to-3D en 30s. Je pense que ça collerait à 100% avec {fit_reason}…
+          </div>
+        </div>
+      </div>
+
+      <!-- Streak -->
+      <div class="tip" style="--c1:#22d3ee;--c2:#34d399">
+        <div class="icon">S</div>
+        <h3>Streak · Gmail 内置 CRM</h3>
+        <p>把 Gmail 直接变成 KOL pipeline：每封邮件自动归到对应博主，按状态 (Contacted / Negotiating / Posted / Renewed) 流转，打开 / 点击实时追踪。</p>
+        <ul>
+          <li>自定义 Box 字段：垂类 · 平台 · CPM · 最近合作日期</li>
+          <li>30+ 长期合作 KOL 全部沉淀在一个 Pipeline 里，离职可交接</li>
+          <li>定时提醒：3 个月没动作的博主自动弹到我的待办</li>
+        </ul>
+        <div class="mock">
+          <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>streak.com · Pipeline: FR KOLs</span></div>
+          <div class="body">
+            <table>
+              <thead><tr><th>KOL</th><th>Stage</th><th>Avg Views</th><th>CPM</th><th>Next</th></tr></thead>
+              <tbody>
+                <tr><td>xenoks</td><td><span class="badge">POSTED ✓</span></td><td>265K</td><td>€6.2</td><td>Renew Q4</td></tr>
+                <tr><td>raoul</td><td><span class="badge">POSTED ✓</span></td><td>286K</td><td>€5.8</td><td>Renew Q4</td></tr>
+                <tr><td>itsottekoi</td><td><span class="badge">POSTED ✓</span></td><td>298K</td><td>€5.4</td><td>Renew Q4</td></tr>
+                <tr><td>le bretzel</td><td><span class="badge">POSTED ✓</span></td><td>126K</td><td>€7.1</td><td>Follow-up</td></tr>
+                <tr><td>kyoshitech</td><td><span class="badge warn">NEGOTIATING</span></td><td>87K</td><td>—</td><td>Send sample</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Auto-reply + Follow up -->
+      <div class="tip" style="--c1:#fbbf24;--c2:#f472b6">
+        <div class="icon">⚡</div>
+        <h3>Auto-Reply &amp; Re-engagement</h3>
+        <p>报价前 80% 的邮件其实只是「要资料 / 要寄样地址 / 问产品功能」——这部分用 Gmail Filter + 模板 + Zapier 自动回完，节省每天 1.5h。</p>
+        <ul>
+          <li>关键词触发：<code>price / tarif / sample / shipping</code> → 推不同模板</li>
+          <li>每次产品大版本更新，Mailmeteor 一键 push update 邮件给历史 KOL</li>
+          <li>Re-engagement 邮件平均带回 <b>15%</b> 沉睡博主重新合作</li>
+        </ul>
+        <div class="mock">
+          <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span>gmail · auto-reply rules</span></div>
+          <div class="body">
+            <span class="prompt">IF</span> subject contains "tarif" OR "rate" → <span class="ai">send template "FR_pricing_v3"</span><br/>
+            <span class="prompt">IF</span> body contains "sample" → <span class="ai">send template "shipping_form" + notify Slack</span><br/>
+            <span class="prompt">CRON</span> every 90 days → <span class="ai">trigger re-engagement to "POSTED ✓" stage</span>
+            <br/><br/>
+            <span class="badge">Last 30d</span> · auto-handled <b style="color:#fff">142</b> emails · saved ≈ <b style="color:#6ee7b7">38h</b>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ IMPACT ============ -->
+  <section id="impact" class="reveal">
+    <div class="sec-head">
+      <div>
+        <div class="tag">04 · BEYOND KOL</div>
+        <h2>Agency &amp; Offline · Formnext</h2>
+      </div>
+    </div>
+    <div class="tips">
+      <div class="tip" style="--c1:#7c5cff;--c2:#f472b6">
+        <div class="icon">🤝</div>
+        <h3>机构合作 · 合同框架迭代</h3>
+        <p>结构化签约流程，深度参与 <b>2 版合同模板迭代</b>，与 <b>3+ 法语区本地 MCN</b> 建立深度合作，节日 campaign 可在 48h 内拉起 10+ 博主同步发布。</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2026 Yuning Wang · Built as a portfolio for AI-native marketing roles.</div>
+    <div>Made with HTML + 一点点 ✦ AI taste</div>
+  </footer>
+
+</div>
+
+<script>
+  // ============ Video data ============
+  const videos = [
+    { name:"itsottekoi",  platform:"YouTube",  views:"298K", url:"https://www.youtube.com/shorts/VTnjQAKKLUA", desc:"Tech / 3D · YouTube Shorts 爆款",      c1:"#ff0050", c2:"#7c5cff" },
+    { name:"raoul",       platform:"YouTube",  views:"286K", url:"https://youtube.com/shorts/A5odqXWkxZI?feature=share", desc:"Gaming dev · YT Shorts",      c1:"#ff0000", c2:"#f472b6" },
+    { name:"xenoks",      platform:"YouTube",  views:"265K", url:"https://youtube.com/watch?si=d39GUExInNSkCZQK&v=helhTpMIagQ&feature=youtu.be", desc:"3D printing · long-form review", c1:"#ff0000", c2:"#22d3ee" },
+    { name:"le bretzel",  platform:"TikTok",   views:"126K", url:"https://www.tiktok.com/@lebretzel_/video/7604904224622775574", desc:"Pop-tech · TT viral",        c1:"#000",    c2:"#22d3ee" },
+    { name:"creator FR",  platform:"Instagram",views:"92K",  url:"https://www.instagram.com/reel/DTipOdEE_qJ/?igsh=ODg3MnltOHB6ZnF6", desc:"3D print reel · IG",        c1:"#f472b6", c2:"#fbbf24" },
+    { name:"kyoshitech",  platform:"TikTok",   views:"87K",  url:"https://vm.tiktok.com/ZNRkUxXXg/", desc:"Tech tutorial · TT",                                  c1:"#000",    c2:"#7c5cff" },
+    { name:"unefille.ia", platform:"Instagram",views:"38K",  url:"https://www.instagram.com/reel/DS25WsmDWJ9", desc:"AI news / tutos · IG reel",                  c1:"#7c5cff", c2:"#f472b6" },
+    { name:"+22 more",    platform:"All",      views:"3M+",  url:"#",                              desc:"长期合作矩阵 · 月均合计 3M+",                          c1:"#22d3ee", c2:"#34d399" },
+  ];
+
+  const grid = document.getElementById('videoGrid');
+  videos.forEach(v=>{
+    const isExt = v.url && v.url !== "#";
+    const a = document.createElement(isExt?'a':'div');
+    if(isExt){ a.href=v.url; a.target="_blank"; a.rel="noopener"; }
+    a.className='card';
+    a.innerHTML = `
+      <div class="thumb">
+        <div class="ph" style="--c1:${v.c1};--c2:${v.c2}"></div>
+        <div class="platform">${v.platform.toUpperCase()}</div>
+        <div class="views">▶ ${v.views}</div>
+        <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      </div>
+      <div class="meta-b">
+        <div class="name">@${v.name}</div>
+        <div class="desc">${v.desc}</div>
+        <div class="row"><span>Plays · <b>${v.views}</b></span><span class="ext">${isExt?'open ↗':'aggregated'}</span></div>
+      </div>
+    `;
+    grid.appendChild(a);
+  });
+
+  // ============ Reveal on scroll ============
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ============ Count-up KPI ============
+  function countUp(el, target){
+    const dur=1400, t0=performance.now();
+    const fmt = n => Math.round(n).toString();
+    function tick(t){
+      const p=Math.min(1,(t-t0)/dur), v=target*(1-Math.pow(1-p,3));
+      el.firstChild.nodeValue = fmt(v);
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const ko = new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        const n = e.target.querySelector('.num');
+        if(n && !n.dataset.done){ n.dataset.done=1; countUp(n, +n.dataset.c); }
+        ko.unobserve(e.target);
+      }
+    });
+  },{threshold:.5});
+  document.querySelectorAll('.kpi').forEach(el=>ko.observe(el));
+</script>
+</body>
+</html>
